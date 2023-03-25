@@ -1,0 +1,50 @@
+﻿@page "/"
+
+<PageTitle>Moogle!</PageTitle>
+<body>
+<h1> Moogle!</h1>
+
+<input class="p-1 my-4" @bind="query" placeholder="Search something: ">
+
+<button class="learn-more">
+  <span class="circle" aria-hidden="true">
+  <span class="icon arrow"></span>
+  </span>
+  <span class="button-text"@onclick="RunQuery">Buscar</span>
+</button>
+
+@if (!string.IsNullOrEmpty(result.Suggestion)) {
+    <div class="suggestion">
+        <p>¿Quisiste decir <strong><a href="#"@onclick="RunSugg">@result.Suggestion</a></strong>?</p>
+    </div>
+}
+<div>
+<ol type="-" class="results">
+@foreach (var item in result.Items()) {
+    <div class="eachResults">
+    <li>
+        <div class="item">
+            <p class="title">@item.Title</p>
+            <p>... @item.Snippet ... @item.Score</p>
+        </div>
+    </li>
+    </div>
+}
+</ol>
+</div>
+</body>
+
+
+@code {
+    private string query = "";
+    private SearchResult result = new SearchResult();
+
+    private void RunQuery() {
+        result = Moogle.Query(query);
+    }
+    private void RunSugg()
+    {
+         query=@result.Suggestion;
+        
+    }
+}
