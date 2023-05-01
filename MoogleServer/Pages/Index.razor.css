@@ -30,6 +30,14 @@
 
 }*/
 
+
+
+
+.content{
+    background-color:#ffffff;
+}
+
+
 button {
     position: relative;
     display: inline-block;
@@ -148,6 +156,15 @@ body{
     background-repeat:no-repeat;
     background-blend-mode:darken;
     
+}
+
+.container{
+    background-color:rgba(255, 255, 255, 0.062);
+    backdrop-filter: blur(20px);
+    border: solid 1px rgb(255, 255, 255);
+    border-radius: 7px;
+    width: 70%;
+    margin: 0 auto;  
 }
 
 a, .btn-link {
