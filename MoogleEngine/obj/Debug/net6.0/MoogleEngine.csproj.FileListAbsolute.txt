@@ -1,0 +1,12 @@
+D:\PROGRAMACION\PROYECTO\moogle-main\MoogleEngine\bin\Debug\net6.0\MoogleEngine.deps.json
+D:\PROGRAMACION\PROYECTO\moogle-main\MoogleEngine\bin\Debug\net6.0\MoogleEngine.dll
+D:\PROGRAMACION\PROYECTO\moogle-main\MoogleEngine\bin\Debug\net6.0\MoogleEngine.pdb
+D:\PROGRAMACION\PROYECTO\moogle-main\MoogleEngine\obj\Debug\net6.0\MoogleEngine.csproj.AssemblyReference.cache
+D:\PROGRAMACION\PROYECTO\moogle-main\MoogleEngine\obj\Debug\net6.0\MoogleEngine.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROGRAMACION\PROYECTO\moogle-main\MoogleEngine\obj\Debug\net6.0\MoogleEngine.AssemblyInfoInputs.cache
+D:\PROGRAMACION\PROYECTO\moogle-main\MoogleEngine\obj\Debug\net6.0\MoogleEngine.AssemblyInfo.cs
+D:\PROGRAMACION\PROYECTO\moogle-main\MoogleEngine\obj\Debug\net6.0\MoogleEngine.csproj.CoreCompileInputs.cache
+D:\PROGRAMACION\PROYECTO\moogle-main\MoogleEngine\obj\Debug\net6.0\MoogleEngine.dll
+D:\PROGRAMACION\PROYECTO\moogle-main\MoogleEngine\obj\Debug\net6.0\refint\MoogleEngine.dll
+D:\PROGRAMACION\PROYECTO\moogle-main\MoogleEngine\obj\Debug\net6.0\MoogleEngine.pdb
+D:\PROGRAMACION\PROYECTO\moogle-main\MoogleEngine\obj\Debug\net6.0\ref\MoogleEngine.dll

@@ -14,7 +14,7 @@ namespace MoogleEngine
 
         public static List <Documents> documents = List_Documents(files); // Lista de documentos
         public static Dictionary<string,int> Global_Vocabulary {get; set;} = Global_VocabularyM(documents);
-        public static List <Documents> Document_list {get; set;} =TF_IDF(documents,Global_Vocabulary); 
+        public static List <Documents> Document_list {get; set;} = TF_IDF(documents,Global_Vocabulary); 
         public static List<int> Validates{get; set;} = Validates_Text(); 
         
 
