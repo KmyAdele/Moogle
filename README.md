@@ -21,7 +21,7 @@ dotnet run --project MoogleServer
 
 3) Abrir en el navegador la direccion que ofrece:
 
-![moogle](./MoogleServer/wwwroot/Image_2.png)
+![moogle](./MoogleServer/wwwroot/image_2.png)
 
 ### **Una vez realizados estos pasos ya puede usar el Moogle y comenzar a hacer sus busquedas!**
 
