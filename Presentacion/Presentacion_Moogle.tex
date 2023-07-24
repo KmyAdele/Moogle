@@ -1,0 +1,162 @@
+\documentclass{beamer}
+
+\usetheme{Warsaw}
+\usecolortheme{dolphin}
+\useoutertheme{shadow}
+\useinnertheme{rectangles}
+
+
+\title{MOOGLE}
+\author{Arianne Camila Palancar Ochando}
+
+\begin{document}
+
+% Título
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Contenido_D1
+\begin{frame}
+  \frametitle{Qué es Moogle?}
+  Es un buscador de documentos del formato *.txt, que dada una busqueda del
+usuario, devuelve los resultados mas relevantes de dicha busqueda en una base
+de datos (carpeta)
+\end{frame}
+
+% Contenido_D2
+\begin{frame}
+      \frametitle{Objetivo}
+    Ayudar a los usuarios a encontrar rápidamente los archivos de texto relevantes dentro de una carpeta con un gran volumen de archivos .txt.
+\end{frame}
+
+% Contenido_D3
+\begin{frame}
+    \frametitle{Breve descripcion del algoritmo TF-IDF}
+    El algoritmo TF-IDF es una técnica utilizada en la recuperación de información para evaluar la relevancia de un documento en base a una consulta de búsqueda. TF-IDF significa "Frecuencia de Término - Frecuencia Inversa de Documento" y se compone de dos partes:
+
+    \begin{itemize}
+        \item Frecuencia de Término (TF)
+        \item Frecuencia Inversa de Documento (IDF)
+    \end{itemize}
+\end{frame}
+
+    
+% Contenido_D4
+\begin{frame}
+    \frametitle{Como funciona Moogle?}
+    Antes de que se pueda realizar una búsqueda, el programa debe procesar los documentos y calcular su puntaje de relevancia en relación con la consulta de búsqueda. Para hacer esto, se utiliza el cálculo de la frecuencia de términos y el tf-idf de las palabras de los documentos.
+\end{frame}
+
+% Contenido_D5
+\begin{frame}
+    \frametitle{Como funciona Moogle?}
+    Una vez que se ha procesado la información, el programa puede realizar búsquedas. La consulta del usuario se normaliza y se separan los operadores de la consulta. Luego se identifican y trabajan con los operadores y se obtiene una lista de documentos con sus puntajes de relevancia en función de la consulta.
+\end{frame}
+    
+% Contenido_D6
+\begin{frame}
+    \frametitle{Como funciona Moogle?}
+    Una vez que se ha procesado la información, el programa puede realizar búsquedas. La consulta del usuario se normaliza y se separan los operadores de la consulta. Luego se identifican y trabajan con los operadores y se obtiene una lista de documentos con sus puntajes de relevancia en función de la consulta.
+\end{frame}
+
+% Contenido_D7
+\begin{frame}
+    \frametitle{Características del programa}
+        \begin{itemize}
+            \item Sugiere palabras alternativas a las palabras incorrectamente escritas en la consulta.
+            \item Los resultados de la búsqueda se ordenan por puntaje de relevancia.
+            \item Implementa operadores que facilitan y mejoran los resultados de la búsqueda.
+            \item Busqueda efectiva sin considerar el orden de las palabras de la frase de búsqueda.
+        \end{itemize}
+\end{frame}
+  
+% Contenido_D8
+\begin{frame}
+    \frametitle{Operadores de búsqueda}
+    Con el fin de mejorar la calidad de la búsqueda se han implementado operadores
+    que permiten especificar exactamente que queremos que aparezca.
+        \begin{itemize}
+            \item Operador de prioridad "*"
+            \item Operador de exclusión "!"
+            \item Operador de aparición "\\ˆ"
+            \item Operador de cercanía "\\˜"
+        \end{itemize}
+\end{frame}
+
+% Contenido_D9
+\begin{frame}
+    \frametitle{Operadores de búsqueda}
+    \textbf{Operador de prioridad "*"}
+    Se utiliza para indicar que una palabra en la query
+    debe tener más relevancia en la búsqueda. El método \emph{Increment} cuenta
+    el número de asteriscos en una palabra y luego multiplica el peso de la
+    palabra por ese número.
+\end{frame}
+
+% Contenido_D10
+\begin{frame}
+    \frametitle{Operadores de búsqueda}
+    \textbf{Operador de exclusión "!"}
+    Se utiliza para indicar que una palabra en la query no
+    debe aparecer en los documentos devueltos. El método \emph{Doc\_Can\_Appear}
+    busca los documentos donde la palabra no aparece y devuelve una lista de
+    IDs de documentos que cumplen esta condición.
+\end{frame}
+    
+% Contenido_D11    
+\begin{frame}
+    \frametitle{Operadores de búsqueda}
+    \textbf{Operador de aparición "\\ˆ"}
+    se utiliza para indicar que una palabra en la query
+    debe aparecer obligatoriamente en los documentos devueltos. El método
+    \emph{Doc\_Can\_Appear} busca los documentos donde la palabra aparece y de-
+    vuelve una lista de IDs de documentos que cumplen esta condición.
+\end{frame}
+    
+% Contenido_D12
+\begin{frame}
+    \frametitle{Operadores de búsqueda}
+    \textbf{Operador de cercanía "\\˜"}
+    Se utiliza para indicar que las 2 palabras relacionadas por este operador 
+    en el texto de la búsqueda deben aparecer lo más cercanas en el texto del
+    doccumento a buscar.
+\end{frame}
+    
+% Contenido_D13
+\begin{frame}
+    \frametitle{Ventajas del uso del algoritmo TF-IDF}
+        \begin{itemize}
+            \item Permite identificar la importancia relativa de las palabras en un documento. Las palabras que aparecen con frecuencia en un documento pero no en otros tienen una mayor importancia, lo que ayuda a filtrar los documentos irrelevantes y mejorar la precisión de la búsqueda.
+            \item Es un método simple y eficiente para calcular la relevancia de los documentos en función de la consulta de búsqueda.
+            \item Funciona bien con grandes conjuntos de datos, ya que es rápido y escalable.
+            \item Es ampliamente utilizado en la industria y en la investigación debido a su eficacia y simplicidad.
+        \end{itemize}
+\end{frame}
+    
+% Contenido_D14
+\begin{frame}
+    \frametitle{Ventajas del uso del algoritmo TF-IDF}
+        \begin{itemize}
+            \item Ayuda a identificar la importancia de las palabras en un documento para filtrar los documentos irrelevantes y mejorar la precisión de la búsqueda
+            \item Es un método simple y eficiente para calcular la relevancia de los documentos en función de la consulta de búsqueda.
+            \item Funciona bien con grandes conjuntos de datos, ya que es rápido y escalable.
+            \item Es ampliamente utilizado en la industria y en la investigación debido a su eficacia y simplicidad.
+        \end{itemize}
+\end{frame}
+    
+% Contenido_D15
+\begin{frame}
+    \frametitle{Conclusiones}
+    En resumen, Moogle ofrece varios beneficios como la capacidad de identificar la importancia relativa de las palabras en un documento y filtrar documentos irrelevantes para mejorar la precisión de la búsqueda.
+
+    Invitamos a los usuarios a descargar y utilizar el programa para buscar archivos de texto en grandes conjuntos de datos.
+\end{frame}
+
+% Final
+\begin{frame}
+  \frametitle{¡Gracias!}
+  Gracias por su atención.
+\end{frame}
+
+\end{document}
