@@ -131,6 +131,7 @@ Guide() {
     echo "6) El comando <clean> te permite borrar los archivos auxiliares que se crean cuando se compilan y se general los PDF del Informe y la Presentacion"
     echo " "
     echo "7) El comando <ZIP> te permite comprimir el Informe,la Presentacion y la carpeta del Proyecto, para usarlo solo debe seguir con las instrucciones que se muestran al darle al comando"
+    echo " "
 }
 
 # opciones
