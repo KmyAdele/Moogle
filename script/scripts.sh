@@ -1,22 +1,14 @@
 #!/bin/bash
 
-# Definición de variables
-
-#PROYECTO="/media/cami/Datos/PROGRAMACION/PROYECTO/moogle-main"
-#INFORME="/media/cami/Datos/PROGRAMACION/PROYECTO/moogle-main/Informe"
-#PRESENTACION="/media/cami/Datos/PROGRAMACION/PROYECTO/moogle-main/Presentacion"
-
-
 # Funciones
-
-function run() {
+run() {
     echo "Ejecutando el proyecto..."
     cd ..
     dotnet watch run --project MoogleServer
     cd script
 }
 
-function report() {
+report() {
     echo "Compilando y generando el PDF del informe..."
     cd ..
     cd Informe
@@ -25,42 +17,52 @@ function report() {
     cd script
 }
 
-function slides() {
+slides() {
     echo "Compilando y generando el PDF de la presentación..."
     cd ..
     cd Presentacion
-    chmod u+w Presentacion_Moogle.tex
+    #chmod u+w Presentacion_Moogle.tex
     pdflatex Presentacion_Moogle.tex
     cd ..
     cd script
 }
 
-function show_report() {
-    echo "Visualizando el informe..."
+show_report() {
     cd ..
     cd Informe
     if [ ! -f Informe.pdf ]; then
         echo "Compilando y generando el PDF del informe..."
         pdflatex Informe.tex
     fi
-    evince Informe.pdf
+    echo "Visualizando el informe..."
+    if [ -z "$1"]; then
+        xdg-open Informe.pdf
+    else
+        $1 Informe.pdf
+        return 1
+    fi
     cd ..
     cd script
 }
 
-function show_slides() {
-    echo "Visualizando la presentación..."
+show_slides() {
     cd ..
     cd Presentacion
     if [ ! -f Presentacion_Moogle.pdf]; then
         slides
     fi
-    evince Presentacion_Moogle.pdf
+    echo "Visualizando la presentación..."
+    if [ -z "$1"]; then
+        xdg-open Presentacion_Moogle.pdf
+    else
+        $1 Presentacion_Moogle.pdf
+        return 1
+    fi
     cd ..
     cd script
 }
 
-function clean() {
+clean() {
     echo "Eliminando los ficheros auxiliares..."
     cd ..
     cd Informe
@@ -88,27 +90,4 @@ if [ "$OPT" = "" ]; then
     exit 1
 fi
 
-case "$OPT" in
-    run)
-        run
-        ;;
-    report)
-        report
-        ;;
-    slides)
-        slides
-        ;;
-    show_report)
-        show_report
-        ;;
-    show_slides)
-        show_slides
-        ;;
-    clean)
-        clean
-        ;;
-    *)
-        echo "Opción no válida"
-        exit 1
-        ;;
-esac
+"$@"
