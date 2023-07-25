@@ -135,13 +135,35 @@ ZIP() {
     fi
 
 }
+Guide() {
+    echo "1) El comando "$(tput setaf 4)"<run>"$(tput sgr0)" te permite ejecutar el Moogle"
+    echo " "
+    echo "2) El comando "$(tput setaf 4)"<report>"$(tput sgr0)" te permite Compilar y generar el PDF del Informe del Moogle (Latex) que se encuentra en la carpeta Informe"
+    echo " "
+    echo "3) El comando "$(tput setaf 4)"<slides>"$(tput sgr0)" te permite Compilar y generar el PDF de la Presentacion del Moogle (Latex) que se encuentra en la carpeta Presentacion"
+    echo " "
+    echo "4) El comando "$(tput setaf 4)"<show_report>"$(tput sgr0)" te permite mostrar el PDF Informe del Moogle, y si este no ha sido generado, lo genera y luego lo muestra"
+    echo "    - Este comando tiene la utilidad de que puede ser ejecutado con el lector de PDF que desee, solo basta con pasarselo como parametro de la siguiente forma: "
+    echo "    "$(tput setaf 4)"<script_name.sh> <show_report> <lector_a_usar>"$(tput sgr0)
+    echo "    En el caso de que no le pase ningun lector como parametro, se abrira con un lector de PDF por defecto"
+    echo " "
+    echo "5) El comando "$(tput setaf 4)"<show_slides>"$(tput sgr0)" te permite mostrar el PDF Presentacion del Moogle, y si este no ha sido generado, lo genera y luego lo muestra"
+    echo "    - Este comando tiene la utilidad de que puede ser ejecutado con el lector de PDF que desee, solo basta con pasarselo como parametro de la siguiente forma: "
+    echo "    "$(tput setaf 4)"<script_name.sh> <show_slides> <lector_a_usar>"$(tput sgr0)
+    echo "    En el caso de que no le pase ningun lector como parametro, se abrira con un lector de PDF por defecto"
+    echo " "
+    echo "6) El comando "$(tput setaf 4)"<clean>"$(tput sgr0)" te permite borrar los archivos auxiliares que se crean cuando se compilan y se general los PDF del Informe y la Presentacion"
+    echo " "
+    echo "7) El comando "$(tput setaf 4)"<ZIP>"$(tput sgr0)" te permite comprimir el Informe,la Presentacion y la carpeta del Proyecto, para usarlo solo debe seguir con las instrucciones que se muestran al darle al comando"
+}
+
 
 echo "
 ▒█▀▀▀█ ▒█▀▀█ ▒█▀▀█ ▀█▀ ▒█▀▀█ ▀▀█▀▀ 
 ░▀▀▀▄▄ ▒█░░░ ▒█▄▄▀ ▒█░ ▒█▄▄█ ░▒█░░ 
 ▒█▄▄▄█ ▒█▄▄█ ▒█░▒█ ▄█▄ ▒█░░░ ░▒█░░"
 # opciones
-OPTIONS="run report slides show_report show_slides clean ZIP"
+OPTIONS="run report slides show_report show_slides clean ZIP Guide"
 
 # Ejecución del script
 
