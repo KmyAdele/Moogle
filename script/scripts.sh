@@ -1,15 +1,20 @@
 #!/bin/bash
 
 # Funciones
+
 run() {
-    echo "Ejecutando el proyecto..."
+    echo " "
+    echo -e "\033[36m"Ejecutando el proyecto..."\033[0m"
+    echo " "
     cd ..
     dotnet watch run --project MoogleServer
     cd script
 }
 
 report() {
-    echo "Compilando y generando el PDF del informe..."
+    echo " "
+    echo -e "\033[36m"Compilando y generando el PDF del informe..."\033[0m"
+    echo " "
     cd ..
     cd Informe
     pdflatex Informe.tex
@@ -18,7 +23,10 @@ report() {
 }
 
 slides() {
-    echo "Compilando y generando el PDF de la presentación..."
+    echo " "
+    echo -e "\033[36m"Compilando y generando el PDF de la presentación..."\033[0m"
+    #echo "Compilando y generando el PDF de la presentación..."
+    echo " "
     cd ..
     cd Presentacion
     #chmod u+w Presentacion_Moogle.tex
@@ -31,10 +39,16 @@ show_report() {
     cd ..
     cd Informe
     if [ ! -f Informe.pdf ]; then
-        echo "Compilando y generando el PDF del informe..."
+        echo " "
+        echo -e "\033[36m"Compilando y generando el PDF del informe..."\033[0m"
+        #echo "Compilando y generando el PDF del informe..."
+        echo " "
         pdflatex Informe.tex
     fi
-    echo "Visualizando el informe..."
+    echo " "
+    echo -e "\033[36m"Visualizando el informe..."\033[0m"
+    #echo "Visualizando el informe..."
+    echo " "
     if [ -z "$1"]; then
         xdg-open Informe.pdf
     else
@@ -49,9 +63,17 @@ show_slides() {
     cd ..
     cd Presentacion
     if [ ! -f Presentacion_Moogle.pdf]; then
+        echo " "
+        echo -e "\033[36m"Compilando y generando el PDF de la presentación..."\033[0m"
+        #echo "Compilando y generando el PDF de la presentación..."
+
+        echo " "
         slides
     fi
-    echo "Visualizando la presentación..."
+    echo " "
+    echo -e "\033[36m"Visualizando la presentacion.."\033[0m"
+    echo " "
+    #echo "Visualizando la presentación..."
     if [ -z "$1"]; then
         xdg-open Presentacion_Moogle.pdf
     else
@@ -63,7 +85,10 @@ show_slides() {
 }
 
 clean() {
-    echo "Eliminando los ficheros auxiliares..."
+    echo " "
+    echo -e "\033[36m"Eliminando los ficheros auxiliares..."\033[0m"
+    #echo "Eliminando los ficheros auxiliares..."
+    echo " "
     cd ..
     cd Informe
     find . ! -name '*.tex' ! -name '*.png' ! -name '*.jpg' -type f -delete
@@ -73,6 +98,7 @@ clean() {
     cd ..
     cd script
 }
+
 ZIP() {
     echo " "
     echo "Escriba <Informe> si desea comprimir el informe"
@@ -110,6 +136,10 @@ ZIP() {
 
 }
 
+echo "
+▒█▀▀▀█ ▒█▀▀█ ▒█▀▀█ ▀█▀ ▒█▀▀█ ▀▀█▀▀ 
+░▀▀▀▄▄ ▒█░░░ ▒█▄▄▀ ▒█░ ▒█▄▄█ ░▒█░░ 
+▒█▄▄▄█ ▒█▄▄█ ▒█░▒█ ▄█▄ ▒█░░░ ░▒█░░"
 # opciones
 OPTIONS="run report slides show_report show_slides clean ZIP"
 
@@ -117,6 +147,7 @@ OPTIONS="run report slides show_report show_slides clean ZIP"
 
 OPT=$1
 if [ "$OPT" = "" ]; then
+    echo " "
     echo "Sintaxys se uso: $0 <opcion>"
     echo ""
     echo "Opciones:"
