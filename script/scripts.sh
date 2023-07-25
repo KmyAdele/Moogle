@@ -110,8 +110,31 @@ ZIP() {
 
 }
 
+Guide() {
+    echo " "
+    echo "1) El comando <run> te permite ejecutar el Moogle"
+    echo " "
+    echo "2) El comando <report> te permite Compilar y generar el PDF del Informe del Moogle (Latex) que se encuentra en la carpeta Informe"
+    echo " "
+    echo "3) El comando <slides> te permite Compilar y generar el PDF de la Presentacion del Moogle (Latex) que se encuentra en la carpeta Presentacion"
+    echo " "
+    echo "4) El comando <show_report> te permite mostrar el PDF Informe del Moogle, y si este no ha sido generado, lo genera y luego lo muestra"
+    echo "    - Este comando tiene la utilidad de que puede ser ejecutado con el lector de PDF que desee, solo basta con pasarselo como parametro de la siguiente forma: "
+    echo "    <script_name.sh> <show_report> <lector_a_usar>"
+    echo "    En el caso de que no le pase ningun lector como parametro, se abrira con un lector de PDF por defecto"
+    echo " "
+    echo "5) El comando <show_slides> te permite mostrar el PDF Presentacion del Moogle, y si este no ha sido generado, lo genera y luego lo muestra"
+    echo "    - Este comando tiene la utilidad de que puede ser ejecutado con el lector de PDF que desee, solo basta con pasarselo como parametro de la siguiente forma: "
+    echo "    <script_name.sh> <show_slides> <lector_a_usar>"
+    echo "    En el caso de que no le pase ningun lector como parametro, se abrira con un lector de PDF por defecto"
+    echo " "
+    echo "6) El comando <clean> te permite borrar los archivos auxiliares que se crean cuando se compilan y se general los PDF del Informe y la Presentacion"
+    echo " "
+    echo "7) El comando <ZIP> te permite comprimir el Informe,la Presentacion y la carpeta del Proyecto, para usarlo solo debe seguir con las instrucciones que se muestran al darle al comando"
+}
+
 # opciones
-OPTIONS="run report slides show_report show_slides clean ZIP"
+OPTIONS="run report slides show_report show_slides clean ZIP Guide"
 
 # Ejecución del script
 
