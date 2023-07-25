@@ -73,9 +73,45 @@ clean() {
     cd ..
     cd script
 }
+ZIP() {
+    echo " "
+    echo "Escriba <Informe> si desea comprimir el informe"
+    echo "Escriba <Presentacion> si desea comprimir la Presentacion"
+    echo "Escriba <Moogle> si desea comprimir la Carpeta entera del Moogle"
+    echo " "
+    read archivo
+
+    if [ "$archivo" = "Informe" ]; then
+        echo " "
+        echo "Comprimiendo $archivo.pdf en $archivo.zip..."
+        cd ..
+        cd Informe
+        zip "$archivo.zip" "$archivo.pdf"
+        cd ..
+        echo "Archivo comprimido $archivo.zip creado exitosamente."
+        cd script
+    elif [ "$archivo" = "Presentacion" ]; then
+        echo "Comprimiendo $archivo.pdf en $archivo.zip..."
+        cd ..
+        cd Presentacion
+        zip "$archivo.zip" "$archivo.pdf"
+        cd ..
+        echo "Archivo comprimido $archivo.zip creado exitosamente."
+        cd script
+    elif [ "$archivo" = "Moogle" ]; then
+        echo "Comprimiendo $archivo.pdf en $archivo.zip..."
+        cd ..
+        cd ..
+        zip -r "$archivo.zip" "Moogle-main"
+        cd ..
+        echo "Archivo comprimido $archivo.zip creado exitosamente."
+        cd script
+    fi
+
+}
 
 # opciones
-OPTIONS="run report slides show_report show_slides clean"
+OPTIONS="run report slides show_report show_slides clean ZIP"
 
 # Ejecución del script
 
